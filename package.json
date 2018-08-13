@@ -4,6 +4,7 @@
   "description": "Refactor of flashtatu api arquitecture to a more SOLID based approach, using best practices related to node API and microservice standards (starting simple, going complex as development evolves)",
   "private": true,
   "scripts": {
+    "precommit": "",
     "build": "webpack",
     "prod": "node ./dist/main.js",
     "dev": "nodemon --exec babel-node ./server/index.js"
