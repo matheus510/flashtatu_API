@@ -31,11 +31,11 @@ $ npm run test
 
 ### Used technologies
 <a href="http://standardjs.com">
-  <img width="50" height="50" title="JavaScript Style Guide - Standard Style" src="https://cdn.rawgit.com/standard/standard/master/badge.svg">
+  <img width="200" height="200" title="JavaScript Style Guide - Standard Style" src="https://cdn.rawgit.com/standard/standard/master/badge.svg">
 </a> | 
 <a href="https://github.com/babel/babel-loader">
-  <img width="50" height="50" title="babel-loader" src="https://worldvectorlogo.com/logos/babel-10.svg">
+  <img width="200" height="200" title="babel-loader" src="https://worldvectorlogo.com/logos/babel-10.svg">
 </a> |
 <a href="https://github.com/webpack/webpack">
-  <img width="50" height="50" src="https://webpack.js.org/assets/icon-square-big.svg">
+  <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
 </a>
