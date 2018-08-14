@@ -1,10 +1,11 @@
 import { Router } from 'express'
+import tattoosController from './tattoosController'
 
 const tattoosRouter = Router()
 
-tattoosRouter.post('/tattoos', createTattoo)
-tattoosRouter.get('/tattoos', getTattoo)
-tattoosRouter.put('/tattoos', editTattoo)
-tattoosRouter.delete('/tattoos', deleteTattoo)
+tattoosRouter.post('/tattoos', tattoosController.createTattoo)
+tattoosRouter.get('/tattoos', tattoosController.getTattoo)
+tattoosRouter.put('/tattoos', tattoosController.editTattoo)
+tattoosRouter.delete('/tattoos', tattoosController.deleteTattoo)
 
 export default tattoosRouter

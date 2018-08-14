@@ -6,7 +6,7 @@
   "scripts": {
     "precommit": "standard --verbose | snazzy  && npm run test",
     "test": "jest",
-    "build": "webpack",
+    "build": "webpack --progress --silent",
     "prod": "node ./dist/main.js",
     "dev": "nodemon --exec babel-node ./server/app.js"
   },
@@ -48,5 +48,10 @@
   "standard": {
     "globals": []
   },
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "mongodb": "^3.1.3"
+  }
 }
