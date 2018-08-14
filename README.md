@@ -20,3 +20,7 @@ For building:
 ```sh
 $ npm run build
 ```
+For testing:
+```
+$ npm run test
+```
