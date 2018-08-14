@@ -8,7 +8,7 @@
     "test": "jest",
     "build": "webpack",
     "prod": "node ./dist/main.js",
-    "dev": "nodemon --exec babel-node ./server/index.js"
+    "dev": "nodemon --exec babel-node ./server/app.js"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,5 @@
   "standard": {
     "globals": []
   },
-  "dependencies": {
-    "express": "^4.16.3"
-  }
+  "dependencies": {}
 }

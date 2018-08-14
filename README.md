@@ -1,5 +1,48 @@
 # Flashtatu 0.0.2
 
+### Used technologies
+<table>
+  <thead>
+    <tr>
+      <th align="center" width="80">
+        <a href="http://standardjs.com">
+          <img style="max-width:90px;" title="JavaScript Style Guide - Standard Style" src="https://cdn.rawgit.com/standard/standard/master/badge.svg">
+        </a>
+      </th>
+      <th align="center" width="80">
+        <a href="https://github.com/facebook/jest">
+          <img style="max-width:90px;" src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg">
+        </a>
+      </th>
+      <th align="center" width="80">
+        <a href="https://github.com/babel/babel-loader">
+          <img style="max-width:90px;" title="babel-loader" src="https://worldvectorlogo.com/logos/babel-10.svg">
+        </a>
+      </th>
+      <th align="center" width="80">
+        <a href="https://github.com/webpack/webpack">
+          <img style="max-width:90px;" src="https://raw.githubusercontent.com/webpack/media/master/logo/icon.png">
+        </a>
+      </th>
+      <th align="center" width="80">
+        <a href="https://github.com/facebook/jest">
+          <img style="max-width:90px;" src="https://camo.githubusercontent.com/f6414ee20933d5fb8b06dc32ed38c8aa175da559/687474703a2f2f64702e68616e6c6f6e2e696f2f3331337933753244307033382f6a6573742e706e67">
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">Standard Eslint Config</td>
+      <td align="center">Express Js</td>
+      <td align="center">Babel Transpiler</td>
+      <td align="center">Webpack</td>
+      <td align="center">Jest</td>
+    </tr>
+  </tbody>
+</table>
+
+
 ### Introduction
 
 This is a API that will be further used on Flashtatu platform. It will manages all bussiness logic and data persistence. Ideally, it will be based on SOLID principles, trying to follow [node best practices](https://github.com/i0natan/nodebestpractices) towards componentization.
@@ -27,15 +70,5 @@ For testing (Jest):
 $ npm run test
 ```
 
-###
 
-### Used technologies
-<a href="http://standardjs.com">
-  <img width="200" height="200" title="JavaScript Style Guide - Standard Style" src="https://cdn.rawgit.com/standard/standard/master/badge.svg">
-</a> | 
-<a href="https://github.com/babel/babel-loader">
-  <img width="200" height="200" title="babel-loader" src="https://worldvectorlogo.com/logos/babel-10.svg">
-</a> |
-<a href="https://github.com/webpack/webpack">
-  <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
-</a>
+
