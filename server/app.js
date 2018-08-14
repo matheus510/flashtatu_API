@@ -22,7 +22,7 @@ app.use('/api/tattoos', tattoos.API)
 
 app.listen(5000, () => {
   let db = dbConnection
-  if(db){
+  if (db) {
     console.log('Listening at port 5000')
   }
 })
