@@ -1,11 +1,11 @@
 {
   "name": "flashtatu_api",
   "version": "0.0.2",
-  "description": "Refactor of flashtatu api arquitecture to a more SOLID based approach, using best practices related to node API and microservice standards (starting simple, going complex as development evolves)",
+  "description": "Refactor of flashtatu api arquitecture to a more SOLID approach, using best practices related to node API and microservice standards (starting simple, going complex as development evolves)",
   "private": true,
   "scripts": {
-    "precommit": "standard --verbose | snazzy",
-    "test": "",
+    "precommit": "standard --verbose | snazzy  && npm run test",
+    "test": "jest",
     "build": "webpack",
     "prod": "node ./dist/main.js",
     "dev": "nodemon --exec babel-node ./server/index.js"
@@ -18,7 +18,13 @@
     "platform",
     "tattoo",
     "node",
-    "rest"
+    "rest",
+    "jest",
+    "webpack",
+    "TDD",
+    "DDD",
+    "BDD",
+    "SOLID"
   ],
   "author": "Matheus Fonseca <matheus510.fonseca@gmail.com>",
   "license": "MIT",
@@ -28,17 +34,21 @@
   "homepage": "https://github.com/matheus510/flashtatu_api#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
     "babel-preset-es2015": "^6.24.1",
     "husky": "^0.14.3",
+    "jest": "^23.5.0",
     "nodemon": "^1.18.3",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0",
+    "regenerator-runtime": "^0.12.1",
     "snazzy": "^7.1.1",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
   },
   "standard": {
     "globals": []
   },
   "dependencies": {
+    "express": "^4.16.3"
   }
 }
