@@ -1,25 +1,25 @@
 // Create Tattoo Database Interactor
-// Required: 
+// Required:
 function createTattoo () {
-  
+
 }
 
 // Get Tattoo Database Interactor
-// Required: 
+// Required:
 function getTattoo () {
-  
+
 }
 
 // Edit Tattoo Database Interactor
-// Required: 
+// Required:
 function editTattoo () {
-  
+
 }
 
 // Delete Tattoo Database Interactor
-// Required: 
+// Required:
 function deleteTattoo () {
-  
+
 }
 
 export default {

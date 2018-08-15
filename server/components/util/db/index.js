@@ -1,12 +1,12 @@
 import mongoose from 'mongoose'
 
 import logger from '../logger'
-import envConfig from '../../../config/env.config'
+import config from '../../../config/env.config'
 
 mongoose.Promise = global.Promise
 
 // DB connection URI
-const dbURI = envConfig.dbURI
+const dbURI = config.dbURI
 
 const connection = mongoose.connect(dbURI)
 

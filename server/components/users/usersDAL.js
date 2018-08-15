@@ -1,25 +1,25 @@
 // Create User Database Interactor
-// Required: 
+// Required:
 function createUser () {
-  
+
 }
 
 // Get User Database Interactor
-// Required: 
+// Required:
 function getUser () {
-  
+
 }
 
 // Edit User Database Interactor
-// Required: 
+// Required:
 function editUser () {
-  
+
 }
 
 // Delete User Database Interactor
-// Required: 
+// Required:
 function deleteUser () {
-  
+
 }
 
 export default {

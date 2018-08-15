@@ -1,25 +1,23 @@
-import tattoosDAL from './tattoosDAL'
-
 // Create Tattoo Controller
-// Required: 
+// Required:
 function createTattoo (req, res) {
   res.send('200')
 }
 
 // Get Tattoo Controller
-// Required: 
+// Required:
 function getTattoo (req, res) {
   res.send('200')
 }
 
 // Edit Tattoo Controller
-// Required: 
+// Required:
 function editTattoo (req, res) {
   res.send('200')
 }
 
 // Delete Tattoo Controller
-// Required: 
+// Required:
 function deleteTattoo (req, res) {
   res.send('200')
 }
