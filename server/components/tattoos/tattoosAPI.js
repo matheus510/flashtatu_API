@@ -3,9 +3,9 @@ import tattoosController from './tattoosController'
 
 const tattoosRouter = Router()
 
-tattoosRouter.post('/tattoos', tattoosController.createTattoo)
-tattoosRouter.get('/tattoos', tattoosController.getTattoo)
-tattoosRouter.put('/tattoos', tattoosController.editTattoo)
-tattoosRouter.delete('/tattoos', tattoosController.deleteTattoo)
+tattoosRouter.post('/', tattoosController.createTattoo)
+tattoosRouter.get('/', tattoosController.getTattoo)
+tattoosRouter.put('/', tattoosController.editTattoo)
+tattoosRouter.delete('/', tattoosController.deleteTattoo)
 
 export default tattoosRouter

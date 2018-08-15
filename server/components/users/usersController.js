@@ -1,8 +1,32 @@
-const boilerplateController = {
-  createUser: () => '200',
-  getUser: () => '200',
-  editUser: () => '200',
-  deleteUser: () => '200'
+import usersDAL from './usersDAL'
+
+// Create User Controller
+// Required: 
+function createUser (req, res) {
+  res.send('200')
 }
 
-export default boilerplateController
+// Get User Controller
+// Required: 
+function getUser (req, res) {
+  res.send('200')
+}
+
+// Edit User Controller
+// Required: 
+function editUser (req, res) {
+  res.send('200')
+}
+
+// Delete User Controller
+// Required: 
+function deleteUser (req, res) {
+  res.send('200')
+}
+
+export default {
+  createUser,
+  getUser,
+  editUser,
+  deleteUser
+}
