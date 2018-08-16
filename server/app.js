@@ -1,9 +1,9 @@
 import express from 'express'
 import helmet from 'helmet'
 import bodyParser from 'body-parser'
-import users from './components/users'
-import tokens from './components/tokens'
-import tattoos from './components/tattoos'
+import User from './components/users'
+import Token from './components/tokens'
+import Tattoo from './components/tattoos'
 import DbConnection from './components/util/db'
 
 // Instantiate express
@@ -17,7 +17,6 @@ class Server {
   }
   initDB () {
     const connection = new DbConnection()
-
     connection.start()
   }
   initMiddleware () {
@@ -28,16 +27,18 @@ class Server {
     app.use(bodyParser.json())
   }
   initRoutes () {
-    // Set users, tokens and tattoos routes
-    app.use('/api/users', users.API)
-    app.use('/api/tokens', tokens.API)
-    app.use('/api/tattoos', tattoos.API)
+    // Set users, tokens and tattoos instantiate entities
+    const user = new User()
+    const token = new Token()
+    const tattoo = new Tattoo()
+    app.use('/api/users', user.API)
+    app.use('/api/tokens', token.API)
+    app.use('/api/tattoos', tattoo.API)
   }
   start () {
-    app.listen(5000, () => console.log('Listening at port 5000'))
+    app.listen(5000, () => console.log('\x1b[44m%s\x1b[0m', 'Listening at port 5000'))
   }
 }
 
 const server = new Server()
-
 server.start()

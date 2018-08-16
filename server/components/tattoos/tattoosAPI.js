@@ -1,6 +1,7 @@
 import { Router } from 'express'
-import tattoosController from './tattoosController'
+import TattooController from './tattoosController'
 
+const tattoosController = new TattooController()
 const tattoosRouter = Router()
 
 tattoosRouter.post('/', tattoosController.createTattoo)

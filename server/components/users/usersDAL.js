@@ -1,30 +1,33 @@
-// Create User Database Interactor
-// Required:
-function createUser () {
+import User from './usersModel'
+class UserDAL {
+  // Insert User Database Interactor
+  // Required:
+  async insertUser (reqUser) {
+    const user = new User({ user: reqUser })
+    try {
+      let newUser = await user.save()
+      return newUser
+    } catch (err) {
+      return err
+    }
+  }
+  // Get User Database Interactor
+  // Required:
+  getUser () {
 
+  }
+
+  // Edit User Database Interactor
+  // Required:
+  editUser () {
+
+  }
+
+  // Delete User Database Interactor
+  // Required:
+  deleteUser () {
+
+  }
 }
 
-// Get User Database Interactor
-// Required:
-function getUser () {
-
-}
-
-// Edit User Database Interactor
-// Required:
-function editUser () {
-
-}
-
-// Delete User Database Interactor
-// Required:
-function deleteUser () {
-
-}
-
-export default {
-  createUser,
-  getUser,
-  editUser,
-  deleteUser
-}
+export default UserDAL

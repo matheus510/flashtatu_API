@@ -10,4 +10,4 @@ COPY . .
 # Expose correct port
 EXPOSE 5000
 
-CMD [ "node", "index" ]
+CMD [ "node", "./dist/main.js" ]

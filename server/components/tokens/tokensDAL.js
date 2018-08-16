@@ -1,39 +1,34 @@
 import Token from './tokensModel'
 
-// Create Token Database Interactor
-// Required:
-async function createToken (reqToken) {
-  const token = new Token({ token: reqToken, expires: Date.now() })
-  try {
-    let newToken = await token.save()
+class TokenDAL {
+  // Insert Token Database Interactor
+  // Required:
+  async insertToken (reqToken) {
+    const token = new Token({ token: reqToken, expires: Date.now() })
+    try {
+      // Save new token on DB
+      let newToken = await token.save()
+      return newToken
+    } catch (err) {
+      // Throw error
+      throw new Error(err)
+    }
+  }
+  // Get Token Database Interactor
+  // Required:
+  getToken () {
 
-    return newToken
-  } catch (err) {
-    return err
+  }
+  // Edit Token Database Interactor
+  // Required:
+  editToken () {
+
+  }
+  // Delete Token Database Interactor
+  // Required:
+  deleteToken () {
+
   }
 }
 
-// Get Token Database Interactor
-// Required:
-function getToken () {
-
-}
-
-// Edit Token Database Interactor
-// Required:
-function editToken () {
-
-}
-
-// Delete Token Database Interactor
-// Required:
-function deleteToken () {
-
-}
-
-export default {
-  createToken,
-  getToken,
-  editToken,
-  deleteToken
-}
+export default TokenDAL

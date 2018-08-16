@@ -2,11 +2,12 @@ import tokensApi from './tokensAPI'
 import tokensController from './tokensController'
 import tokensDAL from './tokensDAL'
 
-// Centralize all tokens domain and export it
-const token = {
-  API: tokensApi,
-  controller: tokensController,
-  DAL: tokensDAL
+class Token {
+  constructor () {
+    this.API = tokensApi
+    this.controller = tokensController
+    this.DAL = tokensDAL
+  }
 }
 
-export default token
+export default Token

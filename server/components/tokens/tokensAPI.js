@@ -1,6 +1,7 @@
 import { Router } from 'express'
-import tokensController from './tokensController'
+import TokenController from './tokensController'
 
+const tokensController = new TokenController()
 const tokensRouter = Router()
 
 tokensRouter.post('/', tokensController.createToken)

@@ -8,7 +8,7 @@ class DbConnection {
   start () {
     mongoose.connect(this.dbURI)
       .then(() => {
-        console.log('Successfully connected to DB.')
+        console.log('\x1b[44m%s\x1b[0m', 'Successfully connected to database.')
       })
       .catch(err => {
         if (err.message.code === 'ETIMEDOUT') {

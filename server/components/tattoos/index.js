@@ -2,11 +2,12 @@ import tattoosApi from './tattoosAPI'
 import tattoosController from './tattoosController'
 import tattoosDAL from './tattoosDAL'
 
-// Centralize all tattoos domain and export it
-const tattoo = {
-  API: tattoosApi,
-  controller: tattoosController,
-  DAL: tattoosDAL
+class Tattoo {
+  constructor () {
+    this.API = tattoosApi
+    this.controller = tattoosController
+    this.DAL = tattoosDAL
+  }
 }
 
-export default tattoo
+export default Tattoo
