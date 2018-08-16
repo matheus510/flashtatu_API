@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   mode: 'none',
-  entry: './server/app.js',
+  entry: '../server.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
@@ -10,7 +10,7 @@ module.exports = {
   target: 'node',
   resolve: {
     alias: {
-      '@': './server/'
+      '@': '../.'
     }
   }
 }

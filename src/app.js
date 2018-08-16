@@ -38,10 +38,11 @@ class Server {
     this.app.use('/api/tattoos', tattoo.API)
     this.app.use('/api/calls', call.API)
   }
-  start () {
-    this.app.listen(5000, () => console.log('\x1b[44m%s\x1b[0m', 'Listening at port 5000'))
+  init () {
+    this.app.listen(5000, () => {
+      console.log('\x1b[45m%s\x1b[0m', 'Listening at port 5000')
+    })
   }
 }
 
-const server = new Server()
-server.start()
+export default Server

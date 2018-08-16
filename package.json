@@ -5,11 +5,11 @@
   "private": true,
   "scripts": {
     "precommit": "standard --verbose | snazzy",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "build": "webpack --progress --silent",
     "prod": "node ./dist/main.js",
     "start": "",
-    "dev": "nodemon --exec babel-node ./server/app.js --presets es2015 ./server/app.js"
+    "dev": "nodemon --exec babel-node ./src/server.js --presets es2015 ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -44,11 +44,14 @@
     "regenerator-runtime": "^0.12.1",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1",
+    "superagent": "^3.8.3",
+    "supertest": "^3.1.0",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   },
   "standard": {
-    "globals": []
+    "globals": [],
+    "env": [ "jest" ]
   },
   "dependencies": {
     "body-parser": "^1.18.3",
