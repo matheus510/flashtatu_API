@@ -3,10 +3,10 @@ import Tattoo from './tattoosModel'
 class TattooDAL {
   // Insert Tattoo Database Interactor
   // Required:
-  async insertTattoo (reqTattoo) {
+  insertTattoo (reqTattoo) {
     const tattoo = new Tattoo({ tattoo: reqTattoo })
     try {
-      let newTattoo = await tattoo.save()
+      let newTattoo = Promise.resolve(tattoo.save())
       return newTattoo
     } catch (err) {
       return err

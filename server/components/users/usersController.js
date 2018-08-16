@@ -4,14 +4,14 @@ const userDAL = new UserDAL()
 class UserController {
   // Create User
   // Required: userName and hashedPassword
-  async createUser (req, res) {
+  createUser (req, res) {
     let reqUser = `${req.body.userName}:${req.body.hashedPassword}`
 
     // Wait for User to be successfully created and then return the User
-    let newUser = await userDAL.insertUser(reqUser)
-
-    // Send result
-    res.status(201).send(JSON.stringify(newUser))
+    userDAL.insertUser(reqUser).then((newUser) => {
+      // Send result
+      res.status(201).send(JSON.stringify(newUser))
+    })
   }
   // Get User
   // Required:

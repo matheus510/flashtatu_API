@@ -5,14 +5,14 @@ const tokensDAL = new TokenDAL()
 class TokenController {
   // Create Token
   // Required: userName and hashedPassword
-  async createToken (req, res) {
+  createToken (req, res) {
     let reqToken = `${req.body.userName}:${req.body.hashedPassword}`
 
     // Wait for token to be successfully created and then return the token
-    let newToken = await tokensDAL.insertToken(reqToken)
-
-    // Send result
-    res.status(201).send(JSON.stringify(newToken))
+    tokensDAL.insertToken(reqToken).then((newToken) => {
+      // Send result
+      res.status(201).send(JSON.stringify(newToken))
+    })
   }
 
   // Get Token

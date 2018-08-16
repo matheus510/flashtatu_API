@@ -5,14 +5,14 @@ const tattoosDAL = new TattooDAL()
 class TattooController {
   // Create Tattoo
   // Required: userName and hashedPassword
-  async createTattoo (req, res) {
+  createTattoo (req, res) {
     let reqTattoo = `${req.body.userName}:${req.body.hashedPassword}`
 
     // Wait for Tattoo to be successfully created and then return the Tattoo
-    let newTattoo = await tattoosDAL.insertTattoo(reqTattoo)
-
-    // Send result
-    res.status(201).send(JSON.stringify(newTattoo))
+    tattoosDAL.insertTattoo(reqTattoo).then((newTattoo) => {
+      // Send result
+      res.status(201).send(JSON.stringify(newTattoo))
+    })
   }
   // Get Tattoo
   // Required:

@@ -2,10 +2,10 @@ import User from './usersModel'
 class UserDAL {
   // Insert User Database Interactor
   // Required:
-  async insertUser (reqUser) {
+  insertUser (reqUser) {
     const user = new User({ user: reqUser })
     try {
-      let newUser = await user.save()
+      let newUser = Promise.resolve(user.save())
       return newUser
     } catch (err) {
       return err

@@ -3,11 +3,11 @@ import Token from './tokensModel'
 class TokenDAL {
   // Insert Token Database Interactor
   // Required:
-  async insertToken (reqToken) {
+  insertToken (reqToken) {
     const token = new Token({ token: reqToken, expires: Date.now() })
     try {
       // Save new token on DB
-      let newToken = await token.save()
+      let newToken = Promise.resolve(token.save())
       return newToken
     } catch (err) {
       // Throw error
