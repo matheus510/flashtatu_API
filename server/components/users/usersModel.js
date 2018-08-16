@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
   professional: {
     type: Boolean,
     required: true
+  },
+  phone: {
+    type: String,
+    required: true
   }
 })
 
