@@ -1,4 +1,12 @@
-import user from './user'
+import usersApi from './usersAPI'
+import usersController from './usersController'
+import usersDAL from './usersDAL'
 
-// Expose users to be consumed by app.js
-export default user
+// Centralize all users domain and export it
+const users = {
+  API: usersApi,
+  controller: usersController,
+  DAL: usersDAL
+}
+
+export default users

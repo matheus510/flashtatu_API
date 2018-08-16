@@ -6,16 +6,15 @@ async function createToken (req, res) {
   let reqToken = `${req.body.userName}:${req.body.hashedPassword}`
   // Wait for token to be successfully created and then return the token
   let newToken = await tokensDAL.createToken(reqToken)
-  
+
   res.status(201).send(JSON.stringify(newToken))
 }
 
-
 // Get Token Controller
-// Required: 
+// Required:
 function getToken (req, res) {
   let token = req.get('Authorization')
-  res.send(token ? token : '200')
+  res.send(token || '200')
 }
 
 // Edit Token Controller

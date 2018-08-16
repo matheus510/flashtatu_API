@@ -8,11 +8,9 @@ async function createToken (reqToken) {
     let newToken = await token.save()
 
     return newToken
-
-  } catch (err){
+  } catch (err) {
     return err
   }
-
 }
 
 // Get Token Database Interactor

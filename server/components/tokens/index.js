@@ -1,4 +1,12 @@
-import token from './token'
+import tokensApi from './tokensAPI'
+import tokensController from './tokensController'
+import tokensDAL from './tokensDAL'
 
-// Expose tokens to be consumed by app.js
+// Centralize all tokens domain and export it
+const token = {
+  API: tokensApi,
+  controller: tokensController,
+  DAL: tokensDAL
+}
+
 export default token
