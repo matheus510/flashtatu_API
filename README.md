@@ -84,8 +84,6 @@ In the future I'll use Swagger, but for now, I'll be using MD files on my Docs f
 
 * Flashtatu 0.0.2 Documentation
   - [Summary](https://github.com/matheus510/flashtatu_api/blob/master/docs/Summary.md)
-  - [Examples](https://github.com/matheus510/flashtatu_api/blob/master/docs/Summary.md)
-  - [Components](https://github.com/matheus510/flashtatu_api/blob/master/docs/Summary.md)
 
 ### About
 
