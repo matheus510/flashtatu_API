@@ -4,23 +4,24 @@ class UserDAL {
   // Insert User Database Interactor
   // Required:
   insertUser (reqUser) {
-    console.log(reqUser)
+    // Instantiate mongoose model for further interaction
     const userInstance = new UserModel(reqUser)
 
-    try {
-      let newUser = Promise.resolve(userInstance.save())
-      let responseObj = {
-        status: 'success',
-        insertedDoc: newUser
+    Promise.resolve(userInstance.save((err) => {
+      if (err) {
+        let responseObj = {
+          status: 'false',
+          insertedDoc: false
+        }
+        return responseObj
+      } else {
+        let responseObj = {
+          status: 'success',
+          insertedDoc: userInstance
+        }
+        return responseObj
       }
-      return responseObj
-    } catch (err) {
-      let responseObj = {
-        status: 'false',
-        insertedDoc: false
-      }
-      return responseObj
-    }
+    }))
   }
   // Get User Database Interactor
   // Required:

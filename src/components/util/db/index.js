@@ -4,6 +4,7 @@ import config from '../../../config/env.config'
 class DbConnection {
   constructor () {
     this.dbURI = config.dbURI
+    this.DbConnection = mongoose.connect(this.dbURI)
   }
   start () {
     mongoose.connect(this.dbURI)
@@ -19,6 +20,9 @@ class DbConnection {
           console.log(err)
         }
       })
+  }
+  close () {
+    mongoose.connection.close()
   }
 }
 export default DbConnection

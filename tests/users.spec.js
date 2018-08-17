@@ -1,7 +1,7 @@
 import request from 'supertest'
 import Server from '../src/app'
 
-const testServer = new Server()
+let testServer = new Server()
 // Initializes server
 testServer.init()
 
@@ -23,7 +23,8 @@ describe('Test the users CRUD', () => {
       .post('/api/users')
       .send(mockUser)
       .then((response) => {
-        expect(response.statusCode).toBe(200)
+        // expect statusCode 201 - Created
+        expect(response.statusCode).toBe(201)
         done()
       })
   })
@@ -51,3 +52,5 @@ describe('Test the users CRUD', () => {
     })
   })
 })
+
+testServer.close()

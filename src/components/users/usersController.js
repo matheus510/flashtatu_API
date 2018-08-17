@@ -5,10 +5,10 @@ class UserController {
   // Create User
   // Required: userName and hashedPassword
   createUser (req, res) {
-    let reqUser = `${req.body.userName}:${req.body.hashedPassword}`
+    let reqUser = req.body
 
     // Wait for User to be successfully created and then return the User
-    userDAL.insertUser(reqUser).then((newUser) => {
+    Promise.resolve(userDAL.insertUser(reqUser)).then((newUser) => {
       // Send result
       res.status(201).send(JSON.stringify(newUser))
     })

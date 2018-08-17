@@ -1,3 +1,4 @@
+import http from 'http'
 import express from 'express'
 import helmet from 'helmet'
 import bodyParser from 'body-parser'
@@ -11,14 +12,15 @@ class Server {
   constructor () {
     // Instantiate express
     this.app = express()
+    this.server = http.createServer(this.app)
+    this.DBConnection = new DbConnection()
     this.initDB()
     this.initMiddleware()
     this.initRoutes()
   }
 
   initDB () {
-    const connection = new DbConnection()
-    connection.start()
+    this.DBConnection.start()
   }
   initMiddleware () {
     // Set helmet middleware
@@ -42,6 +44,12 @@ class Server {
     this.app.listen(5000, () => {
       console.log('\x1b[45m%s\x1b[0m', 'Listening at port 5000')
     })
+  }
+  close () {
+    this.DBConnection.close(() => {
+      console.log('Mongoose connection disconnected')
+    })
+    this.server.close()
   }
 }
 

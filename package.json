@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "precommit": "standard --verbose | snazzy",
-    "test": "jest --detectOpenHandles",
+    "test": "jest",
     "build": "webpack --progress --silent",
     "prod": "node ./dist/main.js",
     "start": "",
@@ -42,6 +42,7 @@
     "jest": "^23.5.0",
     "nodemon": "^1.18.3",
     "regenerator-runtime": "^0.12.1",
+    "server-destroy": "^1.0.1",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1",
     "superagent": "^3.8.3",
@@ -51,7 +52,9 @@
   },
   "standard": {
     "globals": [],
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.18.3",
