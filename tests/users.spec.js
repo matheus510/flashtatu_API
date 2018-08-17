@@ -16,8 +16,10 @@ const mockUser = {
   'phone': mockPhoneNumber.toString()
 }
 
-const mockUpdate = {
-  'name': 'thommas'
+let mockUpdate = {
+  update: {
+    name: 'thommas'
+  }
 }
 describe('Test the users CRUD', () => {
   afterAll(() => {
@@ -29,13 +31,14 @@ describe('Test the users CRUD', () => {
       .send(mockUser)
       .then((response) => {
         // expect statusCode 201 - Created
+        mockUpdate.id = JSON.parse(response.text).insertedDoc._id
         expect(response.statusCode).toBe(201)
         done()
       })
   })
   test('It should response the GET method (By ID)', (done) => {
     request('localhost:5000')
-      .get('/api/users')
+      .get(`/api/users/?by=id&id=${mockUpdate.id}`)
       .then((response) => {
         expect(response.statusCode).toBe(200)
         done()
@@ -54,7 +57,7 @@ describe('Test the users CRUD', () => {
       .put('/api/users')
       .send(mockUpdate)
       .then((response) => {
-        expect(response.statusCode).toBe(200)
+        expect(response.statusCode).toBe(201)
         done()
       })
   })

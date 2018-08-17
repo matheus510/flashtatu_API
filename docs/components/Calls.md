@@ -26,6 +26,7 @@ Related to Teravoz API
         {
           "type": "delegate",
           "call_id": "1463669263.30033",
-          "destination": "*2900" // *2901 if the same number already called
+          "destination": "*2900"
         }
         ```
+        *2901 if the same number already called

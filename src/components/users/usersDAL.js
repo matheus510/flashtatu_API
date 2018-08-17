@@ -16,7 +16,6 @@ class UserDAL {
         }
         return responseObj
       } else {
-        console.log('added: ' + docs)
         let responseObj = {
           status: 'success',
           insertedDoc: docs
@@ -51,8 +50,21 @@ class UserDAL {
 
   // Edit User Database Interactor
   // Required:
-  editUser () {
+  editUser (updateObj) {
+    console.log(updateObj)
+    // Instantiate mongoose model for further interaction
+    return Promise.resolve(UserModel.findById(updateObj.userID)).then((userDoc, err) => {
+      if (err) {
+        console.log(err)
+        return err
+      } else {
+        return Promise.resolve(UserModel.findOneAndUpdate(updateObj.userID, updateObj.userUpdate, {returnNewDocument: true})).then(updatedUser => {
+          if (err) throw new Error(err)
 
+          return updatedUser
+        })
+      }
+    })
   }
 
   // Delete User Database Interactor
