@@ -76,6 +76,16 @@ For testing (Jest):
 $ npm run test
 ```
 
+//WIP - Still unstable, investigating the issue
+If using docker, first build the image
+```sh
+$ docker build . -t matheus510/flashtatu
+```
+Run the docker container
+```sh
+$ docker container run -p 5000:5000 -d matheus510/flashtatu_api
+```
+
 ### API Documentation
 
 In the future I'll use Swagger, but for now, I'll be using MD files on my Docs folder.
