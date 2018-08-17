@@ -7,19 +7,19 @@ class UserDAL {
     // Instantiate mongoose model for further interaction
     const userInstance = new UserModel(reqUser)
 
-    return Promise.resolve(userInstance.save()).then((err) => {
+    return Promise.resolve(userInstance.save()).then((docs, err) => {
       if (err) {
-        console.log('err')
+        console.log(err)
         let responseObj = {
           status: 'false',
           insertedDoc: false
         }
         return responseObj
       } else {
-        console.log('certo')
+        console.log('added: ' + docs)
         let responseObj = {
           status: 'success',
-          insertedDoc: userInstance
+          insertedDoc: docs
         }
         return responseObj
       }
@@ -31,14 +31,18 @@ class UserDAL {
     const queryType = queryOptions.by
     const queryValues = queryOptions.values
     if (queryType === 'attr') {
-      return Promise.resolve(UserModel.find(queryValues, (err, docs) => {
+      return Promise.resolve(UserModel.find(queryValues, (err, result) => {
         if (err) throw new Error(err)
 
-        return docs
+        return result
       }))
     }
     if (queryType === 'id') {
-      return Promise.resolve(UserModel.findById(queryValues.id))
+      return Promise.resolve(UserModel.findById(queryValues.id, (err, result) => {
+        if (err) throw new Error(err)
+
+        return result
+      }))
     }
   }
 

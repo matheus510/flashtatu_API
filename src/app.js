@@ -12,7 +12,6 @@ class Server {
   constructor () {
     // Instantiate express
     this.DBConnection = new DbConnection()
-    this.initDB()
     this.app = express()
     this.server = http.createServer(this.app)
     this.initMiddleware()
@@ -40,17 +39,9 @@ class Server {
     this.app.use('/api/tattoos', tattoo.API)
     this.app.use('/api/calls', call.API)
   }
-  init () {
-    this.app.listen(5000, () => {
-      console.log('\x1b[45m%s\x1b[0m', 'Listening at port 5000')
-    })
-  }
   close () {
-    this.app.removeAllListeners()
-
-    this.DBConnection.close(() => {
-      console.log('Mongoose connection disconnected')
-    })      
+    this.server.close()
+    this.DBConnection.close()
   }
 }
 

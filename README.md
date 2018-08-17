@@ -55,7 +55,7 @@ This is a API that will be further used on Flashtatu platform. It will manages a
 
 The main focus of this version is to apply all best practices that were left behind on the first prototype. ES6, automated tests, precommit checks (husky).
 
-### Start up
+### Getting started
 
 Supported Node version: ```v10.8.0```
 
@@ -75,6 +75,22 @@ For testing (Jest):
 ```
 $ npm run test
 ```
+
+### API Documentation
+
+In the future I'll use Swagger, but for now, I'll be using MD files on my Docs folder.
+
+  <_This API was designed for being the base for Flashtatu Platform. It will administrate ```/api/users```, ```/api/tokens```, ```/api/tattoos``` and ```/api/calls```. As tattos and tokens modules arent ready, I'll not document it for now._>
+
+* Flashtatu 0.0.2 Documentation
+  - [Summary](https://github.com/matheus510/flashtatu_api/blob/master/docs/Summary.md)
+  - [Examples](https://github.com/matheus510/flashtatu_api/blob/master/docs/Summary.md)
+  - [Components](https://github.com/matheus510/flashtatu_api/blob/master/docs/Summary.md)
+
+### About
+
+This is a personal app, that will serve as portfolio for me, showing my habilities as backend developer.
+It will be improved whenever I have time. (If someone wants to join me, just send a PR :))
 
 
 

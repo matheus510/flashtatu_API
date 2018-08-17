@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "precommit": "standard --verbose | snazzy",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --silent --forceExit --runInBand",
     "build": "webpack --progress --silent",
     "prod": "node ./dist/main.js",
     "start": "",
@@ -60,8 +60,6 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
-    "mongoose": "^5.2.8",
-    "winston": "^3.0.0",
-    "winston-papertrail": "^1.0.5"
+    "mongoose": "^5.2.9"
   }
 }
