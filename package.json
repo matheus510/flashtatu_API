@@ -6,7 +6,7 @@
   "scripts": {
     "precommit": "standard --verbose | snazzy",
     "test": "jest --silent --forceExit --runInBand",
-    "build": "webpack --progress --silent",
+    "build": "webpack-cli --entry ./src/server.js --progress --silent",
     "prod": "node ./dist/main.js",
     "start": "",
     "dev": "nodemon --exec babel-node ./src/server.js --presets es2015 ./src/server.js"

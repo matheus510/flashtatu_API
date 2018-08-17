@@ -1,3 +1,4 @@
+import querystring from 'querystring'
 import UserDAL from './usersDAL'
 
 const userDAL = new UserDAL()
@@ -16,7 +17,17 @@ class UserController {
   // Get User
   // Required:
   getUser (req, res) {
-    res.send('200')
+    // Parse query string and create query obj
+    const parsedQuerystring = querystring.parse((req.url.slice(2, req.url.length)))
+    let queryObj = {
+      by: parsedQuerystring['by']
+    }
+    delete parsedQuerystring.by
+    queryObj.values = parsedQuerystring
+
+    Promise.resolve(userDAL.getUser(queryObj)).then(queryResults => {
+      res.send(queryResults)
+    })
   }
   // Edit User
   // Required:

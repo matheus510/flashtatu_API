@@ -38,11 +38,14 @@ class UserDAL {
       }))
     }
     if (queryType === 'id') {
-      return Promise.resolve(UserModel.findById(queryValues.id, (err, result) => {
-        if (err) throw new Error(err)
-
+      return Promise.resolve(UserModel.findById(queryValues.id)).then((err, result) => {
+        if (err) console.log(err)
         return result
-      }))
+      }).catch(() => {
+        let response = 'No user found with provided ID'
+
+        return response
+      })
     }
   }
 

@@ -1,14 +1,13 @@
 ### /api/calls 
 
 Related to Teravoz API
-----
-  * **HTTP Verb:**
 
-    `POST`
+----
+  * **HTTP Verb:** `POST`
   
   * **Params** 
     JSON on request body (call.standby schema)
-    ```js
+    ```json
     {
       "type": "call.standby",
       "call_id": "1463669263.30033",
@@ -23,11 +22,10 @@ Related to Teravoz API
 
     * **Code:** 200 <br />
     * **Content:** 
-        ```js
+        ```json
         {
-          'type': 'delegate',
-          'call_id': callId,
-          'destination': '*2900' /*"*2901" if the same number already called */
+          "type": "delegate",
+          "call_id": "1463669263.30033",
+          "destination": "*2900" // *2901 if the same number already called
         }
         ```
-----
