@@ -7,21 +7,23 @@ class UserDAL {
     // Instantiate mongoose model for further interaction
     const userInstance = new UserModel(reqUser)
 
-    Promise.resolve(userInstance.save((err) => {
+    return Promise.resolve(userInstance.save()).then((err) => {
       if (err) {
+        console.log('err')
         let responseObj = {
           status: 'false',
           insertedDoc: false
         }
         return responseObj
       } else {
+        console.log('certo')
         let responseObj = {
           status: 'success',
           insertedDoc: userInstance
         }
         return responseObj
       }
-    }))
+    })
   }
   // Get User Database Interactor
   // Required:

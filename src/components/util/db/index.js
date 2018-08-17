@@ -7,14 +7,14 @@ class DbConnection {
     this.DbConnection = mongoose.connect(this.dbURI)
   }
   start () {
-    mongoose.connect(this.dbURI)
+    return Promise.resolve(mongoose.connect(this.dbURI))
       .then(() => {
         console.log('\x1b[44m%s\x1b[0m', 'Successfully connected to database.')
       })
       .catch(err => {
         if (err.message.code === 'ETIMEDOUT') {
           console.log('Attempting to re-establish database connection.')
-          mongoose.connect(this.dbURI)
+          return Promise.resolve(mongoose.connect(this.dbURI))
         } else {
           console.log('Error while attempting to connect to database')
           console.log(err)

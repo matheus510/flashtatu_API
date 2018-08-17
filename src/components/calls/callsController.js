@@ -10,7 +10,7 @@ class CallController {
     const callId = receivedCall.call_id
     const userInstance = new User()
     const UserDAL = userInstance.DAL
-    const user = new UserDAL()
+    const UserDALInstance = new UserDAL()
 
     const queryObj = {
       by: 'attr',
@@ -18,7 +18,7 @@ class CallController {
         phone: customerPhone
       }
     }
-    let query = user.getUser(queryObj)
+    let query = UserDALInstance.getUser(queryObj)
 
     // Resolve the query results then send it as response
     Promise.resolve(query).then(queryResult => {
@@ -41,9 +41,11 @@ class CallController {
           'phone': queryObj.values.phone
         }
         //
-        let insertion = user.insertUser(newUser)
+        let insertion = UserDALInstance.insertUser(newUser)
+        console.log('promise'+ Promise.resolve(insertion))
         // Resolve db interaction result
-        Promise.resolve(insertion).then((insertionResult) => {
+        return Promise.resolve(insertion).then((insertionResult) => {
+          console.log('result'+insertionResult)
           if (insertionResult.status !== 'success') console.log(insertionResult)
           console.log(insertionResult)
           const newUserDelegation = {

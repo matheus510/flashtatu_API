@@ -1,5 +1,5 @@
 import Server from './app'
 
-const server = new Server()
+const serverInstance = new Server()
 
-server.init()
+serverInstance.init()

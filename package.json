@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "precommit": "standard --verbose | snazzy",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "build": "webpack --progress --silent",
     "prod": "node ./dist/main.js",
     "start": "",

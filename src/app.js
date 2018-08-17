@@ -11,16 +11,16 @@ import DbConnection from './components/util/db'
 class Server {
   constructor () {
     // Instantiate express
-    this.app = express()
-    this.server = http.createServer(this.app)
     this.DBConnection = new DbConnection()
     this.initDB()
+    this.app = express()
+    this.server = http.createServer(this.app)
     this.initMiddleware()
     this.initRoutes()
   }
 
   initDB () {
-    this.DBConnection.start()
+    return this.DBConnection.start()
   }
   initMiddleware () {
     // Set helmet middleware
@@ -46,10 +46,11 @@ class Server {
     })
   }
   close () {
+    this.app.removeAllListeners()
+
     this.DBConnection.close(() => {
       console.log('Mongoose connection disconnected')
-    })
-    this.server.close()
+    })      
   }
 }
 

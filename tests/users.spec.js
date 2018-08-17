@@ -1,9 +1,10 @@
 import request from 'supertest'
 import Server from '../src/app'
 
-let testServer = new Server()
-// Initializes server
-testServer.init()
+const serverInstance = new Server()
+
+serverInstance.init()
+
 
 const mockUser = {
   'name': 'john',
@@ -16,7 +17,6 @@ const mockUser = {
 const mockUpdate = {
   'name': 'thommas'
 }
-
 describe('Test the users CRUD', () => {
   test('It should response the POST method', (done) => {
     request('localhost:5000')
@@ -48,9 +48,10 @@ describe('Test the users CRUD', () => {
   test('It should response the DELETE method', (done) => {
     request('localhost:5000').delete('/api/users').then((response) => {
       expect(response.statusCode).toBe(200)
-      done()
+      console.log('users done')
+      done(serverInstance.close())
     })
   })
 })
 
-testServer.close()
+
